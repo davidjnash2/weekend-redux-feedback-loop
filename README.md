@@ -1,9 +1,6 @@
 # Project Name
 
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
-
+Weekend Redux Feedback Loop
 ## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
-
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+Building portal for user to submit daily feedback on material comprehension. Built database in PostgresSQL, and used Node, Node pg, and Express for server-side routers, all for back end functionality. For front end, used Javascript, Axios, React, and React-Redux, to creat SPA with complete input functionality and state tracking across multiple url paths.

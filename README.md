@@ -28,7 +28,7 @@ Front End:
             /comments
                 -Any comments you want to leave?
                     -text, not required
-            /submit
+            /review
                 -Review:
                     -all input values (state)
                     -submit button
@@ -44,11 +44,11 @@ Front End:
         -
 
 Back End:
-    -serverjs
+    x-serverjs
     -routerjs
         -post only? for this 
-    -database
-        -table
+    x-database
+        x-table
     
 
 

@@ -66,3 +66,5 @@ ADMIN SECTION
 Display all of the existing feedback at the route /admin. The most recently added feedback should appear at the top of the list. Allow the user to delete existing feedback. Prompt the user to confirm prior to deleting the feedback from the database.
     -useEffect to load list
     -get to pull list
+    -1 component for list (map), 1 component for item
+    -add import to App

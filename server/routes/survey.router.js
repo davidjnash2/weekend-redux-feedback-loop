@@ -39,16 +39,17 @@ router.post('/', async (req, res) => {
 });
 
 // GET Route
-// router.get('/', (req, res) => {
-//     // Collect all surveys and return them
-//     pool.query('SELECT * FROM "feedback";')
-//         .then((result) => {
-//             res.send(result.rows);
-//         }).catch((error) => {
-//             console.log('Error GET /survey', error);
-//             res.sendStatus(500);
-//         });
-// })// END GET Route
+router.get('/', (req, res) => {
+    // Collect all surveys and return them
+    pool.query(`
+    SELECT * FROM "feedback" ORDER BY "date" DESC;`)
+        .then((result) => {
+            res.send(result.rows);
+        }).catch((error) => {
+            console.log('Error GET /survey', error);
+            res.sendStatus(500);
+        });
+})// END GET Route
 
 // DELETE a survey
 // router.delete('/:id', (req, res) => {

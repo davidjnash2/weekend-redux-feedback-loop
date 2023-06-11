@@ -3,7 +3,6 @@ import axios from 'axios';
 import './App.css';
 import { useState, useEffect } from 'react';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
-import Admin from '../Admin/Admin';
 
 // components are here
 import Home from '../Home/Home';
@@ -13,17 +12,23 @@ import Support from '../Support/Support';
 import Comments from '../Comments/Comments';
 import Review from '../Review/Review';
 import Success from '../Success/Success';
+import Admin from '../Admin/Admin';
+
 
 function App() {
 
   return (
-
-    <div className='App'>
-      <header className='App-header'>
-        <h1 className='App-title'>Feedback!</h1>
-        <h4>Don't forget it!</h4>
-      </header>
-      <Router>
+    <Router>
+      <div className='App'>
+        <header className='App-header'>
+          <ul className="nav">
+            <li>
+              <Link to="/admin">Admin Access</Link>
+            </li>
+          </ul>
+          <h1 className='App-title'>Feedback!</h1>
+          <h4>Don't forget it!</h4>
+        </header>
         <Route path="/" exact>
           <Home />
         </Route>
@@ -55,9 +60,8 @@ function App() {
         <Route path="/admin" exact>
           <Admin />
         </Route>
-      </Router>
-    </div>
-
+      </div >
+    </Router>
   );
 }
 

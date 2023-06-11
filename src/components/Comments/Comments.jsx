@@ -38,7 +38,7 @@ function Comments() {
             </form>
 
             <p>Need to go back to fix something?</p>
-            <p>GO BACK AND FIX IT ALREADY!</p>
+            <p>FIX IT ALREADY!</p>
             <button type="button" onClick={() => history.push('/support')}>GO BACK</button>
         </>
     );

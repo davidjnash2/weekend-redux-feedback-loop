@@ -6,7 +6,7 @@ function Success(){
     const history = useHistory();
 
     const goStartAgain = () => {
-        history.push('/feeling')
+        history.push('/')
         // STILL NEED TO RESET feedback/survey STATE HERE
     }
 
@@ -14,7 +14,7 @@ function Success(){
         <>
             <h2>THANK YOU!</h2>
             <p>Feedback received.</p>
-            <button type='button' onClick={goStartAgain}>Leave New Feedback</button>
+            <button type='button' onClick={goStartAgain}>Do it again!</button>
         </>
     );
 }

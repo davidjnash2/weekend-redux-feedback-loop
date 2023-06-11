@@ -3,6 +3,7 @@ import axios from 'axios';
 import './App.css';
 import { useState, useEffect } from 'react';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
+import Admin from '../Admin/Admin';
 
 // components are here
 import Home from '../Home/Home';
@@ -49,6 +50,10 @@ function App() {
 
         <Route path="/success" exact>
           <Success />
+        </Route>
+
+        <Route path="/admin" exact>
+          <Admin />
         </Route>
       </Router>
     </div>

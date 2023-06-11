@@ -36,32 +36,39 @@ import { Provider } from 'react-redux';
 // }
 
 const survey = (state = [], action) => {
-    if(action.type === 'SET_CLEAR'){
+    if (action.type === 'SET_CLEAR') {
         return state = [];
     } else {
-    switch (action.type) {
-        case ('SET_FEELING'):
-            return {
-                ...state,
-                feeling: action.payload
-            };
-        case ('SET_UNDERSTANDING'):
-            return {
-                ...state,
-                understanding: action.payload
-            };
-        case ('SET_SUPPORT'):
-            return {
-                ...state,
-                support: action.payload
-            };
-        case ('SET_COMMENTS'):
-            return {
-                ...state,
-                comments: action.payload
-            };
+        switch (action.type) {
+            case ('SET_FEELING'):
+                return {
+                    ...state,
+                    feeling: action.payload
+                };
+            case ('SET_UNDERSTANDING'):
+                return {
+                    ...state,
+                    understanding: action.payload
+                };
+            case ('SET_SUPPORT'):
+                return {
+                    ...state,
+                    support: action.payload
+                };
+            case ('SET_COMMENTS'):
+                return {
+                    ...state,
+                    comments: action.payload
+                };
+        }
     }
+    return state;
 }
+
+const surveyList = (state = [], action) => {
+    if (action.type === 'SET_SURVEY_LIST') {
+        return action.payload
+    }
     return state;
 }
 
@@ -71,7 +78,8 @@ const storeInstance = createStore(
         // understanding,
         // support,
         // comments,
-        survey
+        survey,
+        surveyList
 
     }),
     applyMiddleware(logger)

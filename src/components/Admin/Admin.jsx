@@ -60,7 +60,7 @@ function Admin() {
                 </thead>
                 <tbody>
                     {surveyList.map((survey, i) => (
-                        <tr key={i}> <SurveyListItem survey={survey} /></tr>
+                        <tr key={i}> <SurveyListItem survey={survey} getSurveyList={getSurveyList} /></tr>
                     ))}
                 </tbody>
             </table>

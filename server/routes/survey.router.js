@@ -14,18 +14,18 @@ router.post('/', async (req, res) => {
             understanding,
             support,
             comments
-           } = req.body;
+        } = req.body;
         await client.query('BEGIN')
         const surveyInputs = await client.query(`INSERT INTO "feedback" ("feeling", "understanding", "support", "comments")
         VALUES ($1, $2, $3, $4)
         RETURNING id;`, [feeling, understanding, support, comments]);
         const surveyId = surveyInputs.rows[0].id;
 
-    //     await Promise.all(surveyList.map(surveyList => {
-    //         const insertLineItemText = `INSERT INTO "line_item" ("order_id", "pizza_id", "quantity") VALUES ($1, $2, $3)`;
-    //         const insertLineItemValues = [orderId, pizza.id, pizza.quantity];
-    //         return client.query(insertLineItemText, insertLineItemValues);
-    //     }));
+        //     await Promise.all(surveyList.map(surveyList => {
+        //         const insertLineItemText = `INSERT INTO "line_item" ("order_id", "pizza_id", "quantity") VALUES ($1, $2, $3)`;
+        //         const insertLineItemValues = [orderId, pizza.id, pizza.quantity];
+        //         return client.query(insertLineItemText, insertLineItemValues);
+        //     }));
 
         await client.query('COMMIT')
         res.sendStatus(201);
@@ -52,15 +52,15 @@ router.get('/', (req, res) => {
 })// END GET Route
 
 // DELETE a survey
-// router.delete('/:id', (req, res) => {
-//     pool.query('DELETE FROM "feedback" WHERE id=$1', [req.params.id])
-//         .then((result) => {
-//             res.sendStatus(200);
-//         }).catch((error) => {
-//             console.log('Error DELETE /survey', error);
-//             res.sendStatus(500);
-//         })
-// }); // END DELETE route
+router.delete('/:id', (req, res) => {
+    pool.query('DELETE FROM "feedback" WHERE id=$1', [req.params.id])
+        .then((result) => {
+            res.sendStatus(200);
+        }).catch((error) => {
+            console.log('Error DELETE /survey', error);
+            res.sendStatus(500);
+        })
+}); // END DELETE route
 
 
 // PUT Route

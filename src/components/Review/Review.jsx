@@ -1,15 +1,20 @@
 // import React from 'react';
-// import {useDispatch, useSelector} from 'react-redux';
-// import {useHistory} from 'react-router-dom';
+// import { useDispatch, useSelector } from 'react-redux';
+// import { useHistory } from 'react-router-dom';
 
-// function Review(){
+// function Review() {
 
+//     const submitFeedback = () => {
+//         history.push('/success');
+//     }
 
 //     return (
+//         <>
+//             <button type='submit'>SUBMIT</button>
+//         </>
 
 
-//         <button type='submit' onClick={() => history.push('/success')}>SUBMIT</button>
-            
+
 //     )
 // }
 

@@ -33,10 +33,10 @@ Front End:
                     -all input values (state)
                     -submit button
                         -save to database
-                        -take to submission success page (NEW ROUTE)
-                            -Submission success page
-                            -success message
-                            -button to submit new feedback
+                        x-take to submission success page (NEW ROUTE)
+                            x-Submission success page
+                            x-success message
+                            x-button to submit new feedback
                                 -reset all state data & return to step 1
     -Redux to store input values (state, reducers, combine reducers, components)
         -reducers for: feeling, understanding, support, comments 

@@ -5,8 +5,8 @@ import { useState, useEffect } from 'react';
 import {HashRouter as Router, Route, Link } from 'react-router-dom';
 
 // components are here
-// import Feeling from '../Feeling/Feeling';
-// import Understanding from '../Understanding/Understanding';
+import Feeling from '../Feeling/Feeling';
+import Understanding from '../Understanding/Understanding';
 // import Support from '../Support/Support';
 // import Comments from '../Comments/Comments';
 // import Review from '../Review/Review';
@@ -20,9 +20,9 @@ function App() {
         <h1 className='App-title'>Feedback!</h1>
         <h4>Don't forget it!</h4>
       </header>
-      {/* <Feeling />
+      <Feeling />
       <Understanding />
-      <Support />
+      {/* <Support />
       <Comments />
       <Review /> */}
       <Success />

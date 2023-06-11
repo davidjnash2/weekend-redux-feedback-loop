@@ -1,29 +1,36 @@
-// import React from 'react';
-// import { useHistory } from 'react-router-dom';
-// import {useDispatch, useSelector} from 'react-redux';
+import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 
 
-// function Feeling() {
+function Feeling() {
 
-//     const history = useHistory();
+  const [feeling, setFeeling] = useState('');
 
-//     const 
+  const history = useHistory();
 
 
-//     return(
-//             <form onSubmit={(event) => (event)}>
-//               <input
-//                 onChange={}
-//                 type='number'
-//                 placeholder=''
-//                 value={} 
-//               />
-        
-//               <button type='submit' onClick={() => history.push('/understanding')}>Next</button>
-//             </form>
-//           );
+  const submitFeeling = (event) => {
+    event.preventDefault();
+    history.push('/understanding');
+  }
 
-//     );
-// }
+  return (
+    <>
+      <form onSubmit={submitFeeling}>
+        <input
+          onChange={(event) => setFeeling(event.target.value)}
+          type="number"
+          min="0" 
+          max="5"
+          placeholder='How you feeling?'
+          value={feeling}
+        />
 
-// export default Feeling;
+        <button type='submit'>Next</button>
+      </form>
+    </>
+  );
+}
+
+export default Feeling;

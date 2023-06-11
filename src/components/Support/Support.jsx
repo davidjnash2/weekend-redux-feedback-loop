@@ -1,6 +1,6 @@
 // import React from 'react';
 // import { useHistory } from 'react-router-dom';
-// import {useDispatch, useSelector} from 'react-redux';
+// import { useDispatch, useSelector } from 'react-redux';
 
 
 
@@ -8,22 +8,26 @@
 
 //     const history = useHistory();
 
-//     const 
+//     const submitSupport = (event) => {
+//         event.preventDefault();
+//         history.push('/comments');
 
-    
-//     return(
-//             <form onSubmit={(event) => (event)}>
-//               <input
-//                 onChange={}
-//                 type='number'
-//                 placeholder=''
-//                 value={} 
-//               />
-        
-//               <button type='submit' onClick={() => history.push('/comments')}>Next</button>
+//     }
+
+
+//     return (
+//         <>
+//             <form onSubmit={submitSupport}>
+//                 <input
+//                     onChange={ }
+//                     type='number'
+//                     placeholder=''
+//                     value={ }
+//                 />
+
+//                 <button type='submit'>Next</button>
 //             </form>
-//           );
-
+//         </>
 //     );
 // }
 

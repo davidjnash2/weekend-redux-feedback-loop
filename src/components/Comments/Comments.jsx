@@ -1,6 +1,6 @@
 // import React from 'react';
 // import { useHistory } from 'react-router-dom';
-// import {useDispatch, useSelector} from 'react-redux';
+// import { useDispatch, useSelector } from 'react-redux';
 
 
 
@@ -8,20 +8,25 @@
 
 //     const history = useHistory();
 
-//     const 
-//     return(
-//             <form onSubmit={(event) => addProduct(event)}>
-//               <input
-//                 onChange={}
+//     const submitComments = (event) => {
+//         event.preventDefault();
+//         history.push('/review');
+
+//     }
+
+
+
+//     return (
+//         <form onSubmit={submitComments}>
+//             <input
+//                 onChange={ }
 //                 type='text'
 //                 placeholder='Tell me how you really feel.'
-//                 value={} // added objectkey as value to access inputs to clear field
-//               />
-        
-//               <button type='submit' onClick={() => history.push('/review')}>Next</button>
-//             </form>
-//           );
+//                 value={comments} // added objectkey as value to access inputs to clear field
+//             />
 
+//             <button type='submit'>Next</button>
+//         </form>
 //     );
 // }
 

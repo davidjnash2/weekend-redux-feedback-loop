@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -6,11 +6,19 @@ import { useDispatch, useSelector } from 'react-redux';
 
 function Understanding() {
 
+    const [understanding, setUnderstanding] = useState('');
+
+    const dispatch = useDispatch();
+    
     const history = useHistory();
 
     const submitUnderstanding = (event) => {
         event.preventDefault();
-        history.push('/support')
+        dispatch({
+            type: 'SET_UNDERSTANDING',
+            payload: understanding
+        });
+        history.push('/support');
     }
 
 
@@ -18,13 +26,15 @@ function Understanding() {
         <>
             <form onSubmit={submitUnderstanding}>
                 <input
-                    onChange={ }
-                    type='number'
-                    placeholder='Do you get it?'
+                    onChange={(event) => setUnderstanding(event.target.value)}
+                    type="number"
+                    min="0"
+                    max="5"
+                    placeholder="Do you get it?"
                     value={understanding}
                 />
 
-                <button type='submit'>Next</button>
+                <button type="submit">Next</button>
             </form>
         </>
     );

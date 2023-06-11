@@ -7,11 +7,16 @@ function Feeling() {
 
   const [feeling, setFeeling] = useState('');
 
-  const history = useHistory();
+  const dispatch = useDispatch();
 
+  const history = useHistory();
 
   const submitFeeling = (event) => {
     event.preventDefault();
+    dispatch({
+      type: 'SET_FEELING',
+      payload: feeling
+    });
     history.push('/understanding');
   }
 
@@ -21,13 +26,13 @@ function Feeling() {
         <input
           onChange={(event) => setFeeling(event.target.value)}
           type="number"
-          min="0" 
+          min="0"
           max="5"
-          placeholder='How you feeling?'
+          placeholder="How you feeling?"
           value={feeling}
         />
 
-        <button type='submit'>Next</button>
+        <button type="submit">Next</button>
       </form>
     </>
   );

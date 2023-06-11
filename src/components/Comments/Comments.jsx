@@ -25,16 +25,22 @@ function Comments() {
 
 
     return (
-        <form onSubmit={submitComments}>
-            <input
-                onChange={(event) => setComments(event.target.value)}
-                type='text'
-                placeholder='There, there. Let it out.'
-                value={comments}
-            />
+        <>
+            <form onSubmit={submitComments}>
+                <label htmlFor="comments">Got more to say?</label>
+                <input
+                    onChange={(event) => setComments(event.target.value)}
+                    type='text'
+                    placeholder='There, there. Let it out.'
+                    value={comments}
+                />
+                <button type="submit">Next</button>
+            </form>
 
-            <button type="submit">Next</button>
-        </form>
+            <p>Need to go back to fix something?</p>
+            <p>GO BACK AND FIX IT ALREADY!</p>
+            <button type="button" onClick={() => history.push('/support')}>GO BACK</button>
+        </>
     );
 }
 

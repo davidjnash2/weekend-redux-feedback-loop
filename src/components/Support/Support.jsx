@@ -25,17 +25,22 @@ function Support() {
     return (
         <>
             <form onSubmit={submitSupport}>
+                <label htmlFor="support">From 1 to 5, how well do you feel supported?</label>
                 <input
                     onChange={(event) => setSupport(event.target.value)}
                     type="number"
                     min="0"
                     max="5"
+                    required
                     placeholder="Got support?"
                     value={support}
                 />
-
                 <button type="submit">Next</button>
             </form>
+
+            <p>Need to go back to fix something?</p>
+            <p>GO BACK AND FIX IT ALREADY!</p>
+            <button type="button" onClick={() => history.push('/understanding')}>GO BACK</button>
         </>
     );
 }

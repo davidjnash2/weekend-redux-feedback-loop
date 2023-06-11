@@ -23,12 +23,14 @@ function Feeling() {
   return (
     <>
       <form onSubmit={submitFeeling}>
+        <label htmlFor="feeling">From 1 to 5, how are you feeling?</label>
         <input
           onChange={(event) => setFeeling(event.target.value)}
           type="number"
           min="0"
           max="5"
-          placeholder="How you feeling?"
+          required
+          placeholder="Feels?"
           value={feeling}
         />
 

@@ -37,7 +37,13 @@ function Review() {
             <p>Understanding: {survey.understanding}</p>
             <p>Support: {survey.support}</p>
             <p>Comments: {survey.comments}</p>
-            <button type="submit" onClick={submitSurvey}>SUBMIT</button>
+            <p>See something you need to fix?</p>
+            <p>GO BACK AND FIX IT ALREADY!</p>
+            <button type="submit" onClick={() => history.push('/comments')}>GO BACK</button>
+            <p>-OR-</p>
+            <p>if you got it right the first time,</p>
+            <p>SUBMIT THAT SHIT!</p>
+            <button type="button" onClick={submitSurvey}>SUBMIT</button>
         </>
 
 

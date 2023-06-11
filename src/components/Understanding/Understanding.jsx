@@ -25,17 +25,22 @@ function Understanding() {
     return (
         <>
             <form onSubmit={submitUnderstanding}>
+                <label htmlFor="understanding">From 1 to 5, where's your comprehension?</label>
                 <input
                     onChange={(event) => setUnderstanding(event.target.value)}
                     type="number"
                     min="0"
                     max="5"
+                    required
                     placeholder="Do you get it?"
                     value={understanding}
                 />
-
                 <button type="submit">Next</button>
             </form>
+
+            <p>Need to go back to fix something?</p>
+            <p>GO BACK AND FIX IT ALREADY!</p>
+            <button type="button" onClick={() => history.push('/feeling')}>GO BACK</button>
         </>
     );
 }

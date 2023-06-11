@@ -14,8 +14,8 @@ Building portal for user to submit daily feedback on material comprehension. Bui
 
 
 Front End:
-    -SPA/Components & Routes
-        -Routes
+    X-SPA/Components & Routes
+        X-Routes
             x/feeling
                 x-How are you feeling today?
                 x    -number input, 1-5, required
@@ -32,17 +32,17 @@ Front End:
             x    -Review:
             x        -all input values (state)
             x        -submit button
-                        -save to database
+                        X-save to database
                         x-take to submission success page
                         x-(NEW ROUTE)
                             x-Submission success page
                             x-success message
                             x-button to submit new feedback
-STILL NEED TO DO THIS!!!                                -reset all state data & return to step 1
+DONE! STILL NEED TO DO THIS!!!                                X-reset all state data & return to step 1
 
-    -Redux to store input values (state, reducers, combine reducers, components)
+    X-Redux to store input values (state, reducers, combine reducers, components)
         x-reducers for: feeling, understanding, support, comments 
-        -"survey" to hold all
+        X-"survey" to hold all
         
 
     x-Install remaining needed dependencies
@@ -53,7 +53,7 @@ STILL NEED TO DO THIS!!!                                -reset all state data & 
 Back End:
     x-serverjs
     x-routerjs
-        -post only? for this 
+        X-post only? for this 
     x-database
         x-table
     
@@ -63,7 +63,7 @@ Back End:
     STRETCH GOALS
 NOTE: These stretch goals are intended to be completed in order.
 
-UPDATE SCORES
+>>><<<DONE!!!>>><<<UPDATE SCORES
 Allow the user to go back to a previous step and change their score. You still need to disallow empty values!
 
 STYLING

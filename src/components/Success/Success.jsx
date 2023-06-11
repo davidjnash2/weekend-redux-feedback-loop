@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 
 function Success(){
 
-    const survey = useSelector(store => store.survey);
+    // const survey = useSelector(store => store.survey);
 
     const history = useHistory();
 
@@ -22,7 +22,7 @@ function Success(){
         <>
             <h2>THANK YOU!</h2>
             <p>Feedback received.</p>
-            <button type='button' onClick={goStartAgain}>Do it again!</button>
+            <button type="button" onClick={goStartAgain}>Do it again!</button>
         </>
     );
 }

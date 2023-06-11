@@ -8,28 +8,28 @@ import { Provider } from 'react-redux';
 
 
 const feeling = (state = [], action) => {
-    if (action.type === 'SET_FEELING'){
+    if (action.type === 'SET_FEELING') {
         return action.payload
     }
     return state;
 }
 
 const understanding = (state = [], action) => {
-    if (action.type === 'SET_UNDERSTANDING'){
+    if (action.type === 'SET_UNDERSTANDING') {
         return action.payload
     }
     return state;
 }
 
 const support = (state = [], action) => {
-    if (action.type === 'SET_SUPPORT'){
+    if (action.type === 'SET_SUPPORT') {
         return action.payload
     }
     return state;
 }
 
 const comments = (state = [], action) => {
-    if (action.type === 'SET_COMMENTS'){
+    if (action.type === 'SET_COMMENTS') {
         return action.payload
     }
     return state;

@@ -1,33 +1,41 @@
-// import React from 'react';
-// import { useHistory } from 'react-router-dom';
-// import { useDispatch, useSelector } from 'react-redux';
+import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 
 
 
-// function Comments() {
+function Comments() {
 
-//     const history = useHistory();
+    const [comments, setComments] = useState('');
 
-//     const submitComments = (event) => {
-//         event.preventDefault();
-//         history.push('/review');
+    const dispatch = useDispatch();
 
-//     }
+    const history = useHistory();
+
+    const submitComments = (event) => {
+        event.preventDefault();
+        dispatch({
+            type: 'SET_COMMENTS',
+            payload: comments
+        })
+        history.push('/review');
+
+    }
 
 
 
-//     return (
-//         <form onSubmit={submitComments}>
-//             <input
-//                 onChange={ }
-//                 type='text'
-//                 placeholder='Tell me how you really feel.'
-//                 value={comments} // added objectkey as value to access inputs to clear field
-//             />
+    return (
+        <form onSubmit={submitComments}>
+            <input
+                onChange={(event) => setComments(event.target.value)}
+                type='text'
+                placeholder='There, there. Let it out.'
+                value={comments}
+            />
 
-//             <button type='submit'>Next</button>
-//         </form>
-//     );
-// }
+            <button type="submit">Next</button>
+        </form>
+    );
+}
 
-// export default Comments;
+export default Comments;

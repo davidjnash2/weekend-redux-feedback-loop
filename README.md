@@ -16,18 +16,18 @@ Building portal for user to submit daily feedback on material comprehension. Bui
 Front End:
     -SPA/Components & Routes
         -Routes
-            /feeling
-                -How are you feeling today?
-                    -number input, 1-5, required
-            /understanding
-                -How well are you understanding the content?
-                    -number input, 1-5, required
-            /support
-                -How well are you being supported?
-                    -number input, 1-5, required
-            /comments
-                -Any comments you want to leave?
-                    -text, not required
+            x/feeling
+                x-How are you feeling today?
+                x    -number input, 1-5, required
+            x/understanding
+            x    -How well are you understanding the content?
+            x        -number input, 1-5, required
+            x/support
+            x    -How well are you being supported?
+            x        -number input, 1-5, required
+            x/comments
+            x    -Any comments you want to leave?
+            x        -text, not required
             /review
                 -Review:
                     -all input values (state)
@@ -37,15 +37,21 @@ Front End:
                             x-Submission success page
                             x-success message
                             x-button to submit new feedback
-                                -reset all state data & return to step 1
+STILL NEED TO DO THIS!!!                                -reset all state data & return to step 1
+
     -Redux to store input values (state, reducers, combine reducers, components)
-        -reducers for: feeling, understanding, support, comments 
+        x-reducers for: feeling, understanding, support, comments 
         -"survey" to hold all
-        -
+        
+
+    x-Install remaining needed dependencies
+
+
+
 
 Back End:
     x-serverjs
-    -routerjs
+    x-routerjs
         -post only? for this 
     x-database
         x-table

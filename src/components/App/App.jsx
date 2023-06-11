@@ -9,7 +9,7 @@ import Home from '../Home/Home';
 import Feeling from '../Feeling/Feeling';
 import Understanding from '../Understanding/Understanding';
 import Support from '../Support/Support';
-// import Comments from '../Comments/Comments';
+import Comments from '../Comments/Comments';
 // import Review from '../Review/Review';
 import Success from '../Success/Success';
 
@@ -23,7 +23,6 @@ function App() {
         <h4>Don't forget it!</h4>
       </header>
       <Router>
-
         <Route path="/" exact>
           <Home />
         </Route>
@@ -40,11 +39,11 @@ function App() {
           <Support />
         </Route>
 
-        {/* <Route path="/comments" exact>
+        <Route path="/comments" exact>
           <Comments />
         </Route>
 
-        <Route path="/review" exact>
+        {/* <Route path="/review" exact>
           <Review />
         </Route> */}
 

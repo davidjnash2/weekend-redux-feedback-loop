@@ -9,7 +9,7 @@ function Understanding() {
     const [understanding, setUnderstanding] = useState('');
 
     const dispatch = useDispatch();
-    
+
     const history = useHistory();
 
     const submitUnderstanding = (event) => {

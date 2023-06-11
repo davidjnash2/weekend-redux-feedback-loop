@@ -7,40 +7,70 @@ import logger from 'redux-logger';
 import { Provider } from 'react-redux';
 
 
-const feeling = (state = [], action) => {
-    if (action.type === 'SET_FEELING') {
-        return action.payload
-    }
-    return state;
-}
+// const feeling = (state = [], action) => {
+//     if (action.type === 'SET_FEELING') {
+//         return action.payload
+//     }
+//     return state;
+// }
 
-const understanding = (state = [], action) => {
-    if (action.type === 'SET_UNDERSTANDING') {
-        return action.payload
-    }
-    return state;
-}
+// const understanding = (state = [], action) => {
+//     if (action.type === 'SET_UNDERSTANDING') {
+//         return action.payload
+//     }
+//     return state;
+// }
 
-const support = (state = [], action) => {
-    if (action.type === 'SET_SUPPORT') {
-        return action.payload
-    }
-    return state;
-}
+// const support = (state = [], action) => {
+//     if (action.type === 'SET_SUPPORT') {
+//         return action.payload
+//     }
+//     return state;
+// }
 
-const comments = (state = [], action) => {
-    if (action.type === 'SET_COMMENTS') {
-        return action.payload
+// const comments = (state = [], action) => {
+//     if (action.type === 'SET_COMMENTS') {
+//         return action.payload
+//     }
+//     return state;
+// }
+
+const survey = (state = [], action) => {
+    switch (action.type) {
+        case ('SET_FEELING'):
+            return {
+                ...state,
+                feeling: action.payload
+            };
+        case ('SET_UNDERSTANDING'):
+            return {
+                ...state,
+                understanding: action.payload
+            };
+        case ('SET_SUPPORT'):
+            return {
+                ...state,
+                support: action.payload
+            };
+        case ('SET_COMMENTS'):
+            return {
+                ...state,
+                comments: action.payload
+            };
+
+
+
     }
     return state;
 }
 
 const storeInstance = createStore(
     combineReducers({
-        feeling,
-        understanding,
-        support,
-        comments
+        // feeling,
+        // understanding,
+        // support,
+        // comments,
+        survey
 
     }),
     applyMiddleware(logger)

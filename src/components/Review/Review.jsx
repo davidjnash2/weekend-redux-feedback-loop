@@ -5,22 +5,17 @@ import axios from 'axios';
 
 function Review() {
 
-    const feeling = useSelector(store => store.feeling);
+    // const feeling = useSelector(store => store.feeling);
 
-    const understanding = useSelector(store => store.understanding);
+    // const understanding = useSelector(store => store.understanding);
 
-    const support = useSelector(store => store.support);
+    // const support = useSelector(store => store.support);
 
-    const comments = useSelector(store => store.comments);
+    // const comments = useSelector(store => store.comments);
 
-    const survey = useState({
-        feeling,
-        understanding,
-        support,
-        comments
-    })
+    const survey = useSelector(store => store.survey);
 
-  const history = useHistory();
+    const history = useHistory();
 
 
     const submitSurvey = () => {
@@ -33,15 +28,15 @@ function Review() {
                 console.log('error submitting survey via POST', error);
 
             })
-        
+
     }
 
     return (
         <>
-        <p>Feeling: {feeling}</p>
-        <p>Understanding: {understanding}</p>
-        <p>Support: {support}</p>
-        <p>Comments: {comments}</p>
+            <p>Feeling: {survey.feeling}</p>
+            <p>Understanding: {survey.understanding}</p>
+            <p>Support: {survey.support}</p>
+            <p>Comments: {survey.comments}</p>
             <button type="submit" onClick={submitSurvey}>SUBMIT</button>
         </>
 

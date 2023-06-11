@@ -1,13 +1,21 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 function Success(){
 
+    const survey = useSelector(store => store.survey);
+
     const history = useHistory();
 
+    const dispatch = useDispatch();
+
     const goStartAgain = () => {
-        history.push('/')
-        // STILL NEED TO RESET feedback/survey STATE HERE
+        dispatch({
+            type: "SET_CLEAR"
+        })
+        history.push('/');
+        
     }
 
     return(

@@ -36,6 +36,9 @@ import { Provider } from 'react-redux';
 // }
 
 const survey = (state = [], action) => {
+    if(action.type === 'SET_CLEAR'){
+        return state = [];
+    } else {
     switch (action.type) {
         case ('SET_FEELING'):
             return {
@@ -57,10 +60,8 @@ const survey = (state = [], action) => {
                 ...state,
                 comments: action.payload
             };
-
-
-
     }
+}
     return state;
 }
 

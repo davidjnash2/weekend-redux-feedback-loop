@@ -1,17 +1,21 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 
 
 function Support() {
 
+    // hold input data in local state for access
     const [support, setSupport] = useState('');
 
+    // bring in dispatch to allow actions to be sent
     const dispatch = useDispatch();
 
+    // bring in history for url routing
     const history = useHistory();
 
+    // function to capture support input data and send to reducer, and to move to next page
     const submitSupport = (event) => {
         event.preventDefault();
         dispatch({
@@ -19,9 +23,9 @@ function Support() {
             payload: support
         });
         history.push('/comments');
-    }
+    } // end submitSupport function
 
-
+    // DOM render data for input
     return (
         <>
             <form onSubmit={submitSupport}>
@@ -43,6 +47,6 @@ function Support() {
             <button type="button" onClick={() => history.push('/understanding')}>GO BACK</button>
         </>
     );
-}
+} // end Support function
 
 export default Support;

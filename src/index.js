@@ -6,6 +6,10 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import logger from 'redux-logger';
 import { Provider } from 'react-redux';
 
+// originally had a reducer for each input, but when building the 
+// Review component, it became apparent I should look for a more 
+// efficient way to combine them, which I did in survey reducer, so
+// commented out these original four here
 
 // const feeling = (state = [], action) => {
 //     if (action.type === 'SET_FEELING') {
@@ -35,6 +39,9 @@ import { Provider } from 'react-redux';
 //     return state;
 // }
 
+// survey reducer to capture inputs from all 4 user fields into 
+// one object, which initial conditional statement for clearing 
+// state from click of button on Success component
 const survey = (state = [], action) => {
     if (action.type === 'SET_CLEAR') {
         return state = [];
@@ -63,15 +70,17 @@ const survey = (state = [], action) => {
         }
     }
     return state;
-}
+} // end survey reducer
 
+// reducer to create array holding all survey objects coming from database
 const surveyList = (state = [], action) => {
     if (action.type === 'SET_SURVEY_LIST') {
         return action.payload
     }
     return state;
-}
+} // end surveyList reducer
 
+// create state store to hold all reducer data
 const storeInstance = createStore(
     combineReducers({
         // feeling,
@@ -82,11 +91,12 @@ const storeInstance = createStore(
         surveyList
 
     }),
-    applyMiddleware(logger)
+    applyMiddleware(logger) // still not exactly clear on what this does
 );
 
 
-
+// main render holder for entire SPA with all components, wrapped in Provider to 
+// allow state store access across all components
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <Provider store={storeInstance}>

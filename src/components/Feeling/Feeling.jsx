@@ -5,12 +5,16 @@ import { useDispatch, useSelector } from 'react-redux';
 
 function Feeling() {
 
+  // hold feeling input data in state
   const [feeling, setFeeling] = useState('');
 
+  // make dispatch available for use in function
   const dispatch = useDispatch();
 
+  // make history available in function for url routing
   const history = useHistory();
 
+  // capture feeling input value and dispatch to reducer, and route to next page
   const submitFeeling = (event) => {
     event.preventDefault();
     dispatch({
@@ -18,8 +22,9 @@ function Feeling() {
       payload: feeling
     });
     history.push('/understanding');
-  }
+  } // end submitFeeling function
 
+  // render feeling input
   return (
     <>
       <form onSubmit={submitFeeling}>
@@ -38,6 +43,6 @@ function Feeling() {
       </form>
     </>
   );
-}
+} // end Feeling function
 
 export default Feeling;

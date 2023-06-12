@@ -1,17 +1,21 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 
 
 function Understanding() {
 
+    // set local state to hold input data
     const [understanding, setUnderstanding] = useState('');
 
+    // bring in dispatch for access to send to reducer
     const dispatch = useDispatch();
 
+    // bring in history to facilitate url routing
     const history = useHistory();
 
+    // function to capute input data and dispatch to reducer, and redirect to next component
     const submitUnderstanding = (event) => {
         event.preventDefault();
         dispatch({
@@ -19,9 +23,9 @@ function Understanding() {
             payload: understanding
         });
         history.push('/support');
-    }
+    } // end submitUnderstanding function
 
-
+    // DOM render data
     return (
         <>
             <form onSubmit={submitUnderstanding}>
@@ -43,6 +47,6 @@ function Understanding() {
             <button type="button" onClick={() => history.push('/feeling')}>GO BACK</button>
         </>
     );
-}
+} // end Understanding function
 
 export default Understanding;

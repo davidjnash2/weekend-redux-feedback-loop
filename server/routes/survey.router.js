@@ -51,7 +51,7 @@ router.get('/', (req, res) => {
         });
 })// END GET Route
 
-// DELETE a survey
+// DELETE a survey using sanitized SQL query
 router.delete('/:id', (req, res) => {
     pool.query('DELETE FROM "feedback" WHERE id=$1', [req.params.id])
         .then((result) => {

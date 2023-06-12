@@ -3,12 +3,15 @@ import { useHistory } from 'react-router-dom';
 
 function Home() {
 
+    // make history available for url routing
     const history = useHistory();
 
+    // function to route to next page
     const startSurvey = () => {
         history.push('/feeling');
-    }
+    } // end startSurvey function
 
+    // Home render data
     return (
         <>
             <h2>LET US BEGIN.</h2>
@@ -16,6 +19,6 @@ function Home() {
             <button type='button' onClick={startSurvey}>Start</button>
         </>
     );
-}
+} // end Home function
 
 export default Home;

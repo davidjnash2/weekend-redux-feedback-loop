@@ -17,6 +17,7 @@ import Admin from '../Admin/Admin';
 
 function App() {
 
+  // page render data, with router & routes for urls to component portions of page
   return (
     <Router>
       <div className='App'>
@@ -63,6 +64,6 @@ function App() {
       </div >
     </Router>
   );
-}
+} // end App function
 
 export default App;

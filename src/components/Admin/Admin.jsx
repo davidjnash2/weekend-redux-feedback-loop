@@ -7,14 +7,17 @@ import axios from 'axios';
 
 function Admin() {
 
+    // bring dispatch to send action & payload
     const dispatch = useDispatch();
 
+    // bring history to allow router functioning
     const history = useHistory();
 
+    // bring in surveyList from store
     const surveyList = useSelector(store => store.surveyList);
 
 
-
+    // axios GET for list data
     const getSurveyList = () => {
         axios.get('/survey')
             .then((response) => {
@@ -29,10 +32,12 @@ function Admin() {
             })
     }
 
+    // call get function to render list on page load
     useEffect(() => {
         getSurveyList()
     }, []);
 
+    // return to render table, and map over surveyList array to get each item
     return (
         <>
             <table>
@@ -67,9 +72,7 @@ function Admin() {
             <p></p>
             <button type="button" onClick={() => history.push('/')}>GO BACK HOME!</button>
         </>
-
     );
-
 }
 
 export default Admin;
